@@ -1,0 +1,178 @@
+step 1-> mdr cliend and server
+2-> in sever make index.js and import typescript     
+file from mcp.io-> HTTP with SSE OR write manually
+- after write manualy they also work in normal js
+
+3 --> create express server jiske upar/sath me MCP server hum create krenge 
+
+[SSEServerTransport-- bahut sari chije to extract krke rakha rehta hai behind me , jiski help se Ai  communicate kr pata hai client and sever se]
+
+
+-multiple Transport create kr saktehai alag alag user ke liye
+
+
+sse - server side event rout, server client se communicate karta hai by the help of sse and data bhejta hai server to client
+sse-pseudo real time communication bwt server and client
+
+
+message me 2 rout bante hai, isme client server ko data bejta hai
+
+
+4---in server> install 2 dependency 
+npm i express @modelcotextprotocol/sdk
+
+and again
+5---in server> npx i nodemon index.js
+
+6---> create MCP client- this work only with module type
+
+
+
+------------MiSSING PART-----------
+MCP Client Creating From Scratch
+
+1---> npm init -y
+
+2--> make index.js and write code manually 
+ required readline jiska promises wala package chahiye
+
+
+--->Al integrate karne ke liye hum use karenge gemine-Qki ye free hai
+
+search - gemini doc -gemini|google AI for deve- js- copy code and paste into client terminal[in bwt const readline & const chatHistory]and change some lines [ replcae import with const, from with required]
+
+-- generate Gemini API KEY from same place [gemini AI for dev]
+
+API Keys= AIzaSyBTg7l0U8h4iMiBRgMsFIZ3q8JuRnZ92lc
+
+---create file .env
+and GEMINI_API_KEY  = AIzaSyBTg7l0U8h4iMiBRgMsFIZ3q8JuRnZ92lc
+
+
+--API use krne ke liye hume ek package chahiye
+npm i dotenv
+
+after instaaled write in
+index.js- required('dotenv).config();
+
+
+
+--- npm i @google/genai
+
+for run- node index.js 
+
+"type": "module",//this word with import not with require
+CommonJS (require) or ESM (import)-ECMAScript Moludes
+
+
+D:\A - projects\MCP\Add Two Num Al agents\client>node index.js
+You: heelo ai jii
+AI: Hello there! How can I help you today?
+
+You: what is the first message in thus chat?
+AI: The first message in this chat is "heelo ai jii".
+
+You: can you create post on my twitter?
+AI: Okay, I can help you draft a tweet. To make it a good one, I need a little more information.  Tell me:
+
+*   **What is the topic of your tweet?** (e.g., a new blog post, a product announcement, a thought you have, a question for your followers)
+*   **Who is your target audience?** (Knowing who you're talking to helps with tone and content.)
+*   **Do you want to include any links, hashtags, or mentions?** (Links are important if you're promoting something, and hashtags help with visibility.)
+*   **What is the overall tone you're aiming for?** (e.g., funny, serious, informative, promotional)
+
+The more details you give me, the better I can write a tweet that suits your needs.  Let's get tweeting!
+
+You:
+|
+|
+|
+mcp client ban gya hai ab mcp server banayenge and dono ko mila denge fir humara post easly kar dega
+
+
+-------------Actual VIDEO----------
+
+---> Now creating MCP server and how to connect MCP server and MCP client
+
+
+--7>> now make some changes on mcp client- indes.js
+     coz MCP client work only with type module [means (ESM)import]
+   
+   add on client- type: "module
+
+   8---in client> npm i @modelcontextprotocol/sdk
+
+   @modelcontextprotocol/sdk- install this package in both client and server coz 
+
+
+   9---in client>  import some thing @mdolecontext...
+      
+         
+
+         10---in server> fo object schema
+         npm i zod- ye type batata hai, bht sari AI libraries jaise openai, gemini, anthropi isi zod ka use krti hai
+
+
+
+          11---> start server - npx nodemon index.js
+
+
+
+          12--->clint - node index.js
+                server- npx nodemon index.js
+
+          13---> now ye jo tool banaya hai maine addTwoNumber ye mcp server pe toh hai lekin ye same chije humne batani rahegi AI ko ki Ai suno humare pass itne available tool hai  jinka use tum kar sakte ho
+
+
+14---> learn how to pass the data(tools vo is specific tarike se list karna hota hai and ye gemini, openai ... sabka alag alag hoga.)
+
+go to gemini doc- fn calling 
+
+14---> in client create variable(let)
+and tool me ek map create krenge
+
+
+15--->Ai ke sath ek problme nai vo khud tool ko(addTwoNumber or other) ko call nhi kar sakta, Ai ko batana parega ki vo tool hai and ye iska argument hai aap please usse call kar do
+
+
+*some problems happing- fn chal rha hai lekin call nhi kar rha hai aage nhi badh rha hai
+
+
+now humne ek toolcreate kr liya hai 
+D:\A - projects\MCP\Add Two Num Al agents\client>node index.js
+Connected to mcp server
+You: add 2 and 4
+calling tool addTwoNumber
+AI: OK. The sum of 2 and 4 is 6.
+
+You: 8744b984 874y234 add both
+AI: I'm sorry, I need two numbers to add them. The input you provided contains invalid characters. Please provide two valid numbers.
+
+You: 826147 98127674 add 
+calling tool addTwoNumber
+AI: OK. The sum of 826147 and 98127674 is 98953821.
+
+You: can you create insta post?
+AI: I am sorry, I cannot create an Instagram post. I can only add two numbers.
+
+You: add 2 3 23
+AI: I am sorry, I can only add two numbers. Please provide just two numbers.
+
+You:
+
+ye tool only two number ko hi add kar sakta hai
+
+
+
+
+
+-------------NOW----------
+Now going to create another tool for my twitter post
+
+
+-twitter ke api sepost toh create kar loge lekin jo twitter ki guildline hai 
+
+
+
+-------->create one file .env in server so need to install npm install dotenv
+
+
