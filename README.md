@@ -150,7 +150,7 @@ At the `You:` prompt, try:
   ```
   (Model may call `listFiles` with a directory on the **server** filesystem.)
 
-- **Tweet (optional)**
+- **Tweet**
   ```
   post a tweet: "Hello from my MCP agent!"
   ```
