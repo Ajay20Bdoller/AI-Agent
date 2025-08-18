@@ -8,7 +8,7 @@ A lightweight **AI chat client** that talks to a local **MCP (Model Context Prot
 
 This repo is intentionally **framework-free** (plain Node.js). The **client** runs in your terminal, the **server** is an Express app that hosts the MCP server and tools.
 
-
+,,
 ## Project Structure
 
 ```
